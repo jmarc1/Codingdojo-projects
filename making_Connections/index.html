@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Profile</title>
+        <link href="style.css" rel="stylesheet">
+    </head>
+    <body>
+        <header>
+            <nav class="head-nav">
+                <h2>Profile</h2>
+                <ul class="menu">
+                    <li><a href="#">Home</a></li>
+                    <li><a href="#">My Profile</a></li>
+                    <li><a href="#">Find Connections</a></li>
+                    <li><button class="btn1">Sign Out</button></li>
+                </ul>
+            </nav>
+        </header>
+        <main id="container">
+            <section class="profile_card">
+                <div class="profile">
+                    <!--<div id="prof-id"> -->
+                    <div class="profile-top"><!--</div> -->
+                        <img class="profile_img" src="./profile_images/user-circle.png">
+                        <h1 id="user-name">Jane Doe</h1>
+                    </div>
+                    <div class="prof-mid">
+                        <h3><img class="map-point"src="./profile_images/map-marker.png"> Seattle</h3>
+                        <p onclick="changeName()">Developer | Engineer | Problem Solver</p>
+                        <p>Master of shadows and the Internet!</p>
+                        <a href="#" onclick="changeName()"><img class="gear" src="./profile_images/gear.png">Edit profile</a>
+
+                    </div>
+                </div>
+                <div class="education">
+                    <h1>Education</h1>
+                    <div>
+                        <h3>Coding Dojo - Full Stack Bootcamp</h3>
+                        <p>Dec 2019 - Mar 2020</p>
+                        <h3>Triple black belt in python, MERN, and C#...</h3>
+                    </div>
+                </div>
+            </section>
+            <section class="aside">
+                <div class="top-side">
+                    <div class="side-head">
+                        <p id="count1" value="2">2</p>
+                        <h2>connection Requests</h2>
+                    </div>
+                    <div>
+                        <div class="request">
+                            <div class="answer" id="person1">
+                                    <div class="sect">
+                                        <img class="pick" src="./profile_images/user-circle.png">
+                                        <p>Todd E</p>
+                                    </div>
+                                    <div class="sect">
+                                        <a href="#" onclick="addRequest('#person1')"><img  class="pick"src="./profile_images/accept-circle.png"></a>
+                                        <a href="#" onclick="removeRequest('#person1')"><img class="pick" src="./profile_images/close-circle.png"></a>
+                                    </div>
+                            </div>
+                            <div class="answer" id="person2">
+                                <div class="sect">
+                                    <img class="pick" src="./profile_images/user-circle.png">
+                                    <p>Phil K</p>
+                                </div>
+                                <div class="sect">
+                                    <img  class="pick"onclick="addRequest('#person2')" src="./profile_images/accept-circle.png">
+                                    <img class="pick" onclick="removeRequest('#person2')" src="./profile_images/close-circle.png">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="connect">
+
+                        </div>
+                    </div>
+                </div>
+                <div class="bottom-side">
+                    <div class="bottom-top">
+                        <p class="count2">418</p>
+                        <h2>Your Connections</h2>
+                    </div>
+                    <ul class="bottom-info">
+                        <li><img src="./profile_images/user-circle.png"> Adrien D</li>
+                        <li><img src="./profile_images/user-circle.png"> Anne J</li>
+                        <li><img src="./profile_images/user-circle.png"> ALAYNE T</li>
+                        <li><img src="./profile_images/user-circle.png"> Arry Y</li>
+                    </ul>
+                    <div class="okay">
+                        <a href="#" onclick="viewMore()">View More</a>
+                    </div>
+                </div>
+            </section>
+
+
+        </main>
+        <script src="scripts.js"></script>
+    </body>
+</html>

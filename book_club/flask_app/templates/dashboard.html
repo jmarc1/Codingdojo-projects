@@ -1,0 +1,44 @@
+<!DOCTYPE HTML>
+<html>
+    <head></head>
+    <body>
+        <header>
+            <div class="nav-container">
+                <h2>Welcome, {{session["user"]}}</h2>
+                <a href="/logout">logout</a>
+            </div>
+        </header>
+        <main>
+            <div class="container">
+                <div class="add-books">
+                    <form action="" method="POST">
+                        <h2>Add a New Book</h2>
+                        <div class="group-form">
+                            <label for="title">Title</label>
+                            <input type="text" name="title">
+                        </div>
+                        <div class="group-form">
+                            <label for="desc_book">Description</label>
+                            <textarea name="desc_book"></textarea>
+                        </div>
+                    </form>
+                </div>
+                <div class="book-list">
+                    <h2>All Books</h2>
+                    <div class="list">
+                        {% for book in books%}
+                            <a href="/">{{book["title"]}}</a>
+                            <p>(added by {{book["first_last"]}} {{book["last_name"]}})</p>
+                            {%if {{book["user_id"]}} == {{session["user_id"]}} and {{}} != {{book[""]}}%}
+                                <a href="/">Add to Favorites</a>
+                            {% comment %} {%else%}
+                                <p></p> {% endcomment %}
+                            {%endif%}
+                        {%endfor%}
+                    </div>
+                </div>
+            </div>
+        </main>
+        <footer></footer>
+    </body>
+</html>

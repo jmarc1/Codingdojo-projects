@@ -1,0 +1,43 @@
+<!DOCTYPE HTML>
+<html>
+    <head></head>
+    <body>
+        <header>
+            <div class="nav-container">
+                <h2>Welcome, {{session["user"]}}!</h2>
+                <a href ="edit_book/{{book[book_id]}}">Log Out</a>
+            </div>
+        </header>
+        <main>
+            <div class="container">
+                <div class="left">
+                    <form>
+                        <input type="text" name="title">
+                        <p>Added by:{{book["first_name"]}} {{book["last_name"]}}</p>
+                        <p>Added on:{{book["created_at"]}}</p>
+                        <p>Last updated on:{{book["updated_at"]}}</p>
+                        <div class="group-form">
+                            <label for="desc_book">Description:</label>
+                            <textarea name="desc_book"></textarea>
+                        </div>
+                        <button name="update-btn" value="update">Update</button>
+                        <button name="delete-btn" value="delete">Delete</button>
+                    </form>
+                </div>
+                <div class="right">
+                    <h2>Users Who Like This Book:</h2>
+                    <ul>
+                        {%for book in books%}
+                            {%if {{book["user_id"]}} == {{session["user_id"]}}%}
+                                <li>{{book["first_name"]}} {{book["last_name"]}} <a>un-favorite</a></li>
+                            {%else%}
+                                <li>{{book["first_name"]}} {{book["last_name"]}}</li>
+                            {%endif%}
+                        {%endfor%}
+                    </ul>
+                </div>
+            </div>
+        </main>
+        <footer></footer>
+    </body>
+</html>

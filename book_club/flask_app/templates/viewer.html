@@ -1,0 +1,31 @@
+<!DOCTYPE HTML>
+<html>
+    <head></head>
+    <body>
+        <header>
+            <div class="nav-container">
+                <h2>Welcome, {{session["user"]}}!</h2>
+                <a href="/logout">Log Out</a>
+            </div>
+        </header>
+        <main>
+            <div class="container">
+                <div class="left">
+                    <h2>The Silmarillion</h2>
+                    <p>Added by: {{book["first_name"]}} {{book["last_name"]}}</p>
+                    <p>Added on:{{book["created_at"]}}</p>
+                    <p>Last updated on:{{book["updated_at"]}}</p>
+                    <p>Description: {{book["desc_book"]}}</p>
+                </div>
+                <div class="right">
+                    <h2>Users Who Like This Book:</h2>
+                    {%for book in books%}
+                        <li>{{book["first_name"]}} {{book["last_name"]}}</li>
+                    {%endfor%}
+                    <a href="">Add to Favorites</a>
+                </div>
+            </div>
+        </main>
+        <footer></footer>
+    </body>
+</html>
